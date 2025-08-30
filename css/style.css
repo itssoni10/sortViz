@@ -1,0 +1,204 @@
+:root {
+  --primary-color: #1e1e2f;   /* Dark background */
+  --secondary-color: #2a2a40;
+  --accent-color: #6c63ff;    /* Purple */
+  --success-color: #00c896;   /* Neon Green */
+  --visited-color: #ff6b6b;   /* Coral Red */
+  --current-color: #ffb347;   /* Orange/Yellow */
+  --min-color: #f72585;       /* Pink */
+  --text-light: #f1f1f1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  user-select: none;
+}
+
+body {
+  background: linear-gradient(135deg, #1e1e2f, #2a2a40);
+  min-height: 100vh;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: stretch;
+  color: var(--text-light);
+}
+
+/* Title CSS */
+.title {
+  background: linear-gradient(90deg, #6c63ff, #00c896);
+  text-align: center;
+  font-size: 1.4em;
+  padding-block: 0.6em;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-shadow: 0 0 6px rgba(0,0,0,0.4);
+}
+
+/* Navbar CSS */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.8em;
+  font-size: 16px;
+  min-height: 70px;
+  padding-block: 0.6em;
+  background: var(--secondary-color);
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.3);
+  border-bottom: 2px solid var(--accent-color);
+}
+.navbar a {
+  all: unset;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: 0.3s;
+  background: var(--accent-color);
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.6);
+}
+.navbar a:hover {
+  background: var(--success-color);
+  box-shadow: 0 0 12px rgba(0,200,150,0.7);
+}
+.navbar #menu {
+  background: var(--success-color);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+}
+
+/* Center Container */
+.center {
+  margin: 1rem auto;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 6px 20px; 
+  height: 420px;
+  width: 410px;
+  max-height: 731px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #202030;
+  padding: 1rem;
+}
+
+/* Array bars */
+.array {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  flex-direction: row;
+  gap: 2px;
+}
+.cell {
+  flex: 1;
+  margin: 1px;
+  background: var(--accent-color);
+  border-radius: 4px;
+  transition: height 0.4s ease, background 0.4s ease, transform 0.3s;
+  box-shadow: 0 0 6px rgba(108,99,255,0.6);
+}
+.cell:hover {
+  transform: scale(1.05);
+}
+.cell.done {
+  background: var(--success-color);
+  box-shadow: 0 0 12px rgba(0,200,150,0.8);
+}
+.cell.visited {
+  background: var(--visited-color);
+  box-shadow: 0 0 12px rgba(255,107,107,0.8);
+}
+.cell.current {
+  background: var(--current-color);
+  box-shadow: 0 0 12px rgba(255,179,71,0.9);
+}
+.cell.min {
+  background: var(--min-color);
+  box-shadow: 0 0 12px rgba(247,37,133,0.9);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 18px;
+  color: #ddd;
+  padding: 1.6em;
+  background: var(--secondary-color);
+  border-top: 2px solid var(--accent-color);
+}
+footer .fa-heart {
+  color: #eb2c13;
+}
+
+/* Compare Panels */
+.compare-container {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.panel {
+  flex: 1;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #282845;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+.panel-title {
+  background: var(--accent-color);
+  padding: 10px 14px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 6px rgba(0,0,0,0.5);
+}
+.panel .array {
+  height: 360px;
+}
+.complexity {
+  background: rgba(0,0,0,0.6);
+  color: #eee;
+  font-size: 13px;
+  padding: 8px 12px;
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+  .navbar { gap: 0.4em; }
+  .title { font-size: 17px; }
+  .navbar a { font-size: 14px; }
+  .center { width: 95%; }
+  .compare-container { flex-direction: column; padding: 0.5rem; }
+}
+.explain-box {
+  background: #222;
+  border-top: 2px solid #444;
+  margin-top: 10px;
+  text-align: left;
+}
+
+.step-controls {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin: 10px;
+}
+.step-controls button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.step-controls button:hover {
+  opacity: 0.8;
+}
